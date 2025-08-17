@@ -102,6 +102,17 @@
     设 输入的特征图数量（i） = 32  卷积核（n） = 64  卷积核尺寸(s) = (3,3) 
     参数总数 =i*n*s*s + n = n*(i*s*s+1) = 64*(32*9+1) = 18496
 
+# OpenCV 自带的分类器
+    人脸检测器（默认）：haarcascade_frontalface_default.xml
+    人脸检测器（快速）：haarcascade_frontalface_alt2.xml
+    人脸检测器（侧视）：haarcascade_profileface.xml
+    眼部检测器（左眼）：haarcascade_lefteye_2splits.xml
+    眼部检测器（右眼）：haarcascade_righteye_2splits.xml
+    人眼检测器：haarcascade_eye.xml
+    全身检测器：haarcascade_fullbody.xml
+    上半身检测器：haarcascade_upperbody.xml
+    下半身检测器：haarcascade_lowerbody.xml
+
 
 
 
