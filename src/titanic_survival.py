@@ -1,7 +1,7 @@
 def main():
     print("数据预处理开始")
     import pandas as pd
-    train_file = "./static/titanic/train.csv"
+    train_file = "../static/titanic/train.csv"
 
     df_train = pd.read_csv(train_file)
 

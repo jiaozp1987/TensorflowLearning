@@ -11,8 +11,8 @@ from keras.models import load_model
 def data_capture():
     total = 200  # 默认采集的图片总数
     current = 0  # 当前已经采集的张数
-    path = "./static/opencv"  # 图片存放的目录
-    xml_path = "./.venv/Lib/site-packages/cv2/data/"
+    path = "../static/opencv"  # 图片存放的目录
+    xml_path = "../.venv/Lib/site-packages/cv2/data/"
     prefix = 'nomask_'  # 图片前缀
     stop = True  # 当前是否是停止状态
     status = "Pause"  # 状态文字（Pause-暂停|Capturing-采集中|Finish-采集完成）
@@ -66,7 +66,7 @@ def data_capture():
 def data_initialization():
 
     pic_size = 128  # 图片的长宽（pic_size，pic_size）
-    pic_path = "./static/opencv"
+    pic_path = "../static/opencv"
     x_train,y_train,labels = preprocess(pic_path, pic_size)
     print(x_train.shape)
     print(y_train.shape)
@@ -141,7 +141,7 @@ def load_face_model(pic_size,labels):
 
     model = load_model('./static/opencv/my_face.h5')
     model.summary()
-    xml_path = "./.venv/Lib/site-packages/cv2/data/"
+    xml_path = "../.venv/Lib/site-packages/cv2/data/"
     font = cv2.FONT_HERSHEY_SIMPLEX  # 定义界面字体
     cap = cv2.VideoCapture(0)  # 开启摄像头
     face_cascade = cv2.CascadeClassifier(f"{xml_path}haarcascade_frontalface_alt2.xml")  # 创建人脸分类器（定位人脸）
