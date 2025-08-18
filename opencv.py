@@ -1,9 +1,14 @@
 import cv2
+import os
+import random
+from keras.preprocessing import image
+import numpy as np
+from keras import layers, models
+from keras.models import load_model
 
 
 
 def data_capture():
-    import cv2
     total = 200  # 默认采集的图片总数
     current = 0  # 当前已经采集的张数
     path = "./static/opencv"  # 图片存放的目录
@@ -59,7 +64,7 @@ def data_capture():
     cv2.destroyAllWindows()
 
 def data_initialization():
-    import matplotlib.pyplot as plt
+
     pic_size = 128  # 图片的长宽（pic_size，pic_size）
     pic_path = "./static/opencv"
     x_train,y_train,labels = preprocess(pic_path, pic_size)
@@ -80,10 +85,7 @@ def preprocess(path,pic_size):
     :param :
     :return:
     """
-    import os
-    import random
-    from keras.preprocessing import image
-    import numpy as np
+
     x , y = list(),list() # 特征数组，标签数组
     labels = list() # 标签名称
     cid = 0  # 当前图片的标签值
@@ -105,7 +107,7 @@ def preprocess(path,pic_size):
     return np.array(x), np.array(y),np.array(labels)
 
 def create_model(x_train,y_train,lables,pic_size):
-    from keras import layers,models
+
     epochs = 10 # 迭代次数
     batch_size = 10 # 批大小
     classes = len(lables) # 类别的数量
@@ -135,9 +137,8 @@ def create_model(x_train,y_train,lables,pic_size):
     # 保存模型
     model.save('./static/opencv/my_face.h5')
 
-def load_model(pic_size,labels):
-    from keras.models import load_model
-    import numpy as np
+def load_face_model(pic_size,labels):
+
     model = load_model('./static/opencv/my_face.h5')
     model.summary()
     xml_path = "./.venv/Lib/site-packages/cv2/data/"
@@ -173,4 +174,4 @@ if __name__ == '__main__':
     # data_capture()
     # x_train,y_train,labels,pic_size = data_initialization()
     # create_model(x_train,y_train,labels,pic_size)
-    load_model(128,["mask","nomask"])
+    load_face_model(128,["mask","nomask"])
