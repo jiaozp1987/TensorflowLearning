@@ -1,5 +1,7 @@
+import tensorflow as tf
+
 def main():
-    import tensorflow as tf
+
     tf.print("Hello, tensorflow!")
     tf.print(tf.__version__)
     print("Cuda:", tf.test.is_built_with_cuda())

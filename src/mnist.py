@@ -1,10 +1,10 @@
 import matplotlib.pyplot as plt
 import numpy as np
-
+from keras import datasets, layers, models
 
 # 前馈神经网络
 def dense():
-    from keras import datasets, layers, models
+
     # 加载数据集
     (x_train, y_train), (x_test, y_test) = datasets.mnist.load_data()
     # 查看拆分结果
@@ -68,7 +68,7 @@ def dense():
 
 # 卷积神经网络
 def cnn():
-    from keras import datasets, layers, models
+
     # 加载数据集
     (x_train, y_train), (x_test, y_test) = datasets.mnist.load_data()
     # 查看拆分结果

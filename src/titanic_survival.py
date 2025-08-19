@@ -1,6 +1,10 @@
+import pandas as pd
+from keras import datasets, layers, models
+import matplotlib.pyplot as plt
+
 def main():
     print("数据预处理开始")
-    import pandas as pd
+
     train_file = "../static/titanic/train.csv"
 
     df_train = pd.read_csv(train_file)
@@ -35,7 +39,7 @@ def main():
     print(x_test.shape, y_test.shape)
     print("数据预处理结束")
     print("搭建模型开始")
-    from keras import datasets, layers, models
+
     model = models.Sequential()
     model.add(layers.Dense(512, activation="relu", input_shape=(7,)))  # 输入层
     model.add(layers.Dense(256, activation="relu"))
@@ -73,7 +77,7 @@ def main():
 
 # 训练过程可视化
 def visu_history(history, metric_name):
-    import matplotlib.pyplot as plt
+
     plt.title("Train history")
     plt.plot(history.history[metric_name])
     plt.xlabel('opochs')
