@@ -115,10 +115,10 @@
 
 # 七、 经典的卷积神经网络结构
     卷积神经网络结构一般表达式：
-![img_1.png](img_1.png)
+![img_1.png](imgs/img_1.png)
 ## 7.1 LeNet-5
 ### 7.1.1 结构图
-![img_2.png](img_2.png)
+![img_2.png](imgs/img_2.png)
 ### 7.1.2 网络说明
     输入：32*32*1 的弧度图像
     卷积层1：卷积核大小5*5 数量6 步长1，激活函数一般用relu，得到特征图28*28*6 
@@ -133,19 +133,19 @@
     在小规模数据集上表现良好，至今依然被广泛使用，面对更大规模的数据集则需要更复杂的网络
 ## 7.2 AlexNet
 ### 7.2.1 结构图
-![img_3.png](img_3.png)
+![img_3.png](imgs/img_3.png)
 
 ## 7.3 VGGNet（VGG-16）
 ### 7.3.1 结构图
-![img_4.png](img_4.png)
-![img_5.png](img_5.png)
-![img_6.png](img_6.png)
+![img_4.png](imgs/img_4.png)
+![img_5.png](imgs/img_5.png)
+![img_6.png](imgs/img_6.png)
 ## 7,4 ResNet（残差网络）
 ### 7.4.1 神经网络的“退化”问题
     当模型层数增加到某种程度时，模型的准确性会不升反降。这种现象被称为网络的“退化”（Degradation）。
     神经网络退化的主要原因是由反向传播算法中多层复合函数求导引起的梯度消失/梯度爆炸现象，导致网络难以收敛
 ### 7.4.2 原理
-![img_7.png](img_7.png)
+![img_7.png](imgs/img_7.png)
 
 
 # 八、 循环神经网络的结构和特点
@@ -154,16 +154,16 @@
         W是隐藏层上一次的值
     2. 在RNN中，隐藏层的值不仅由上一次的输出决定，还由网络的上一个状态决定。通过这一机制RNN具备了某种“记忆”功能
 ## 8.2 循环神经网络与经典的全连接网络比较
-![img_8.png](img_8.png)
+![img_8.png](imgs/img_8.png)
 ## 8.3 示意图
-![img_9.png](img_9.png)
+![img_9.png](imgs/img_9.png)
 ## 8.4 计算方法
-![img_10.png](img_10.png)
+![img_10.png](imgs/img_10.png)
 ## 8.5 长短记忆网络（LSTM）
 ### 8.5.1 梯度消失与梯度爆炸
-![img_11.png](img_11.png)
+![img_11.png](imgs/img_11.png)
 ### 8.5.2 机制
-![img_12.png](img_12.png) 
+![img_12.png](imgs/img_12.png) 
     
 
 
