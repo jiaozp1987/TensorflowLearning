@@ -166,7 +166,14 @@
 ![img_12.png](imgs/img_12.png) 
     
 
-
+# 九、 自然语言处理（NLP）及NLTK（自然语言工具库）
+## 9.1 安装NLTK,下载语料库
+    pip install nltk
+    import nltk
+    nltk.download() # 下载语料库
+## 9.2 了解NLTK的主要功能模块
+![_cgi-bin_mmwebwx-bin_webwxgetmsgimg__&MsgID=8517602593148294380&skey=@crypt_33e8e806_3efb91bb27cd830d9f443e09782602da&mmweb_appid=wx_webfilehelper.jpg](imgs/_cgi-bin_mmwebwx-bin_webwxgetmsgimg__%26MsgID%3D8517602593148294380%26skey%3D%40crypt_33e8e806_3efb91bb27cd830d9f443e09782602da%26mmweb_appid%3Dwx_webfilehelper.jpg)
+## 9.3 词频统计、分词与分句、去停用词、词干提取、词性标注、WordNet词集等功能示例
 
 
 
