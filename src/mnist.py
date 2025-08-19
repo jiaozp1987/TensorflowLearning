@@ -102,4 +102,3 @@ def cnn():
 if __name__ == '__main__':
     # dense()
     cnn()
-    pass

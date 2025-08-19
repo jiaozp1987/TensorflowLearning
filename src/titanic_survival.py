@@ -1,5 +1,5 @@
 import pandas as pd
-from keras import datasets, layers, models
+from keras import layers, models
 import matplotlib.pyplot as plt
 
 def main():
