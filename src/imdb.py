@@ -19,19 +19,20 @@
 import numpy as np
 from keras.datasets import imdb
 from keras.preprocessing import sequence  # 序列数据的预处理
-from keras import layers,models
+from keras import layers, models
 import matplotlib.pyplot as plt
 
 num_words = 10000
-maxlen = 300 # 定长长度，尽量覆盖所有评论的长度
-epochs = 5 # 迭代训练此时
-batch_size = 128 # 批大小
+maxlen = 300  # 定长长度，尽量覆盖所有评论的长度
+epochs = 5  # 迭代训练此时
+batch_size = 128  # 批大小
+
 
 def main():
     # 加载数据
     (x_train, y_train), (x_test, y_test) = imdb.load_data(num_words=num_words)
     # 查看数据集形状
-    print(x_train.shpe,x_test.shape)
+    print(x_train.shpe, x_test.shape)
     # 查看一条评论数据
     print(x_train[0])
     print(y_train[0])
@@ -39,7 +40,7 @@ def main():
     x_train = sequence.pad_sequences(x_train, maxlen=maxlen)
     x_test = sequence.pad_sequences(x_test, maxlen=maxlen)
 
-    print(x_train.shape,x_test.shape)
+    print(x_train.shape, x_test.shape)
 
     model = models.Sequential()
     model.add(layers.Embedding(num_words, 64))
@@ -47,25 +48,25 @@ def main():
     model.add(layers.Dense(64, activation='relu'))
     model.add(layers.Dense(1, activation='sigmoid'))
     model.summary()
-    model.compile(loss = "binary_crossentropy",optimizer="adam", metrics=["acc"])
+    model.compile(loss="binary_crossentropy", optimizer="adam", metrics=["acc"])
 
     history = model.fit(x_train, y_train, batch_size=batch_size, epochs=epochs, validation_data=(x_test, y_test))
-    model.evaluate(x_test, y_test) # 评估成绩
+    model.evaluate(x_test, y_test)  # 评估成绩
 
     # 训练过程指标可视化
     plt.title("Training metrics curve")
-    plt.plot(range(epochs),history.history["acc"],label="acc") # 准确率变化曲线
-    plt.plot(range(epochs),history.history["loss"],label="loss")  # 误差变化曲线
+    plt.plot(range(epochs), history.history["acc"], label="acc")  # 准确率变化曲线
+    plt.plot(range(epochs), history.history["loss"], label="loss")  # 误差变化曲线
     plt.legend()
     plt.grid()
     plt.show()
 
     # 预测
-    num = 30 # 预测测试集前30条数据
+    num = 30  # 预测测试集前30条数据
     pred = model.predict(x_test[:num])
     # 将输出结果转为（0，1）值
-    y_pred=list()
-    for  i in range(num):
+    y_pred = list()
+    for i in range(num):
         y_pred.append(0 if pred[i] <= 0.5 else 1)
     print(f"预测结果,{np.array(y_pred)}")
     print(f"实际结果,{y_test[:num]}")

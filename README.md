@@ -174,8 +174,19 @@
 ## 9.2 了解NLTK的主要功能模块
 ![_cgi-bin_mmwebwx-bin_webwxgetmsgimg__&MsgID=8517602593148294380&skey=@crypt_33e8e806_3efb91bb27cd830d9f443e09782602da&mmweb_appid=wx_webfilehelper.jpg](imgs/_cgi-bin_mmwebwx-bin_webwxgetmsgimg__%26MsgID%3D8517602593148294380%26skey%3D%40crypt_33e8e806_3efb91bb27cd830d9f443e09782602da%26mmweb_appid%3Dwx_webfilehelper.jpg)
 ## 9.3 词频统计、分词与分句、去停用词、词干提取、词性标注、WordNet词集等功能示例
-
-
+### 词频统计
+![img_1.png](imgs/img_13.png)
+### 去停用词
+    在自然语言处理中，一些不含有用信息的词如the，to，the，a，an，and等被称为停用词，在建模之前通常需要将它们去掉。注意:不同的语言有不同的停用词表。
+### 词干提取
+    单词的词干提取指的是从单词中去除词缀并返回词根(如working 的词干是 work、cars的词干是car)。
+    在搜索中经常使用这种技术--用户通过同一个单词的不同形式进行搜索，返回的都是相同的。常用的词干提取算法是 Porter，
+    NLTK 中封装了PorterStemmer 类来实现。
+### 词性标注    
+    标注出是形容词、动词、名词、副词等词性
+![img_1.png](imgs/img_14.png)
+### 使用wordnet获取单词的词集
+    wordnet是NLTK内置的一个自然语言库，可以得到指定单词的词集，包括释义、例句、近义词、反义词等等。
 
 
 
