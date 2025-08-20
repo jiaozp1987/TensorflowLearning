@@ -193,6 +193,7 @@
 ![img_1.png](imgs/img_15.png)
 ![img_1.png](imgs/img_16.png)
 ## 10.1 启动
+![img_1.png](imgs/img_18.png)
 ![img_1.png](imgs/img_17.png)
 
 
