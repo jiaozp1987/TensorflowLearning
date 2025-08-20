@@ -189,6 +189,11 @@
     wordnet是NLTK内置的一个自然语言库，可以得到指定单词的词集，包括释义、例句、近义词、反义词等等。
 
 
+# 十、 TensorBoard
+![img_1.png](imgs/img_15.png)
+![img_1.png](imgs/img_16.png)
+## 10.1 启动
+![img_1.png](imgs/img_17.png)
 
 
 
