@@ -185,6 +185,7 @@
 ![img_1.png](imgs/img_20.png)
 ## 11.3 多输出模型
 ![img_1.png](imgs/img_21.png)
+![img_1.png](imgs/img_22.png)
 
 
 
