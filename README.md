@@ -8,7 +8,6 @@
 ### 1.1.4 RMSProp（改良了AdaGrad，增加了衰减系数）
 ### 1.1.5 Adam（改良了RMSProp，增加了偏移校正） ，通用性最好，在不清楚选择时可以优先使用
 后4种都是在GD算法基础上不断优化所得
-
 # 二、常用损失函数的类型及选择（loss）
 ## 2.1 回归损失函数
 ### 2.1.1 mean_squared_error (mse) 均方误差，公式为：((y_pred-y_true)**2).mean()
@@ -20,8 +19,6 @@
 ### 2.2.2 binary_crossentropy: 二分类损失函数，交叉熵函数
 ### 2.2.3 categorical_crossentropy: 多酚类损失函数，交叉熵函数
 ### 2.2.4 sparse_categorical_crossentropy: 同上，多分类损失函数，可接受稀疏标签（无需转one-hot独热编码）
-
-
 # 三、评价指标的选择（metrics） -- 即评估函数，用于计算模型的成绩，函数的输入为预测值和实际值，位于keras.metrics模块中
 ## 3.1 分类问题
 ### 3.1.1 binary_accuracy: 二分类问题，计算所有预测值上的平均正确率
@@ -29,9 +26,6 @@
 ### 3.1.3 sparse_categorical_accuracy: 与categorical_accuracy相同，适用于稀疏标签预测
 ### 3.1.4 top_k_categorical_accuracy: 计算top-k正确率，当预测值的前k个值中存在目标类别即认为预测正确
 ### 3.1.5 sparse_top_k_categorical_accuracy： 与top_k_categorical_accuracy相同，适用于稀疏标签预测
-
-
-
 # 四、训练时验证集参数的使用
 ## 4.1 训练集数据 x_train
 ## 4.2 训练集标签 y_train
@@ -41,8 +35,6 @@
     训练时还可以指定验证数据，以更好地验证训练效果，两种方式：直接指定验证集，或从训练集中随机分割一定比例作为验证集
     history = model.fit(x_train, y_train, epochs=1000, batch_size=800, validation_data=(x_val,y_val))
     history = model.fit(x_train, y_train, epochs=1000, batch_size=800, validation_data=0.2)
-
-
 # 五、卷积神经网络中池化的概念
     池化（也成为下采样或降采样）通过对特征图进行降维，达到减少参数数量、防止过拟合的目的。常用的池化类型有最大池化（Max Pooling）和平均池化（Average Pooling）
 ## 5.1 卷积层主要参数
@@ -50,25 +42,21 @@
 ### 5.1.1 filters 卷积核（过滤器）数量（即卷积后产生的特征图数量） 通常逐层增加
 ### 5.1.2 kernel_size 卷积核尺寸（通常使用（3，3）或（5，5））
 ### 5.1.3 strides 卷积步长，默认（1，1）
-### 5.1.4 padding 边界填充策略，默认valid表示不填充，卷积后特征图变小，same表示填充，卷积后与原图相同 
-
+### 5.1.4 padding 边界填充策略，默认valid表示不填充，卷积后特征图变小，same表示填充，卷积后与原图相同
 ## 5.2 池化层主要参数
     全部参数默认情况下，池化后特征图变为原图的一半大小（即参数数量减半）
     layers.MaxPooling2D(pool_size=(2,2),strides=None,padding='valid')
 ### 5.2.1 pool_size 池化窗口的大小 ， 默认（2，2）
 ### 5.2.2 strides 步长，默认None表示与pool_size相同
 ### 5.2.3 padding 边界填充策略，默认valid表示不填充，same表示填充，卷积后与原图相同 ，池化后与原图相同
-
 ## 5.3 dropout层（可选，可以加在网络中任意位置，通常加在全连接层）
     作用是随机舍弃一定比例的连接，防止过拟合
     model.add(layers.Dropout(0.2)) # 随机舍弃20%的连接
     参数0.2是舍弃的连接比例
-
 ## 5.4 卷积神经网络优势
 ### 5.4.1 网络参数数量减少
 ### 5.4.2 具有平移不变性（健壮性）
 ### 5.4.3 基于上述优势，主要用于计算机视觉识别领域
-
 ## 5.5 卷积神经网络参数数量的计算
 ### 5.5.1 全连接网络参数数量的计算方法
     本层神经元的个数：n 本层输入的连接数 x
@@ -101,7 +89,6 @@
     输入层的卷积层会输出32个特征图，经过池化层后会尺寸会缩小但数量不变。这32个特征图是当前卷积层的输入
     设 输入的特征图数量（i） = 32  卷积核（n） = 64  卷积核尺寸(s) = (3,3) 
     参数总数 =i*n*s*s + n = n*(i*s*s+1) = 64*(32*9+1) = 18496
-
 # 六、OpenCV 自带的分类器
     人脸检测器（默认）：haarcascade_frontalface_default.xml
     人脸检测器（快速）：haarcascade_frontalface_alt2.xml
@@ -112,7 +99,6 @@
     全身检测器：haarcascade_fullbody.xml
     上半身检测器：haarcascade_upperbody.xml
     下半身检测器：haarcascade_lowerbody.xml
-
 # 七、 经典的卷积神经网络结构
     卷积神经网络结构一般表达式：
 ![img_1.png](imgs/img_1.png)
@@ -134,7 +120,6 @@
 ## 7.2 AlexNet
 ### 7.2.1 结构图
 ![img_3.png](imgs/img_3.png)
-
 ## 7.3 VGGNet（VGG-16）
 ### 7.3.1 结构图
 ![img_4.png](imgs/img_4.png)
@@ -146,8 +131,6 @@
     神经网络退化的主要原因是由反向传播算法中多层复合函数求导引起的梯度消失/梯度爆炸现象，导致网络难以收敛
 ### 7.4.2 原理
 ![img_7.png](imgs/img_7.png)
-
-
 # 八、 循环神经网络的结构和特点
 ## 8.1 循环神经网络的机制
     1。 与经典的全连接网络相比，循环神经网络的隐藏层多了一个“回路”。S是隐藏层的值，U是输入层到隐藏层的权重矩阵，V是隐藏层到输出层的权重矩阵，权重矩阵
@@ -163,9 +146,7 @@
 ### 8.5.1 梯度消失与梯度爆炸
 ![img_11.png](imgs/img_11.png)
 ### 8.5.2 机制
-![img_12.png](imgs/img_12.png) 
-    
-
+![img_12.png](imgs/img_12.png)
 # 九、 自然语言处理（NLP）及NLTK（自然语言工具库）
 ## 9.1 安装NLTK,下载语料库
     pip install nltk
@@ -187,8 +168,6 @@
 ![img_1.png](imgs/img_14.png)
 ### 使用wordnet获取单词的词集
     wordnet是NLTK内置的一个自然语言库，可以得到指定单词的词集，包括释义、例句、近义词、反义词等等。
-
-
 # 十、 TensorBoard
 ![img_1.png](imgs/img_15.png)
 ![img_1.png](imgs/img_16.png)
